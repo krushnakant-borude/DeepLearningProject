@@ -1,6 +1,7 @@
 from setuptools import find_packages,setup
 from typing import List
 
+
 HYPEN_E_DOT='-e .'
 
 def get_requirements(file_path:str)->List[str]:
@@ -21,7 +22,7 @@ name="Xray",
 version="0.0.1",
 author="krushna Borude",
 author_email="krushnaborude9008@gmail.com",
-install_requires=get_requirements("requirements_dev"),
+install_requires=get_requirements("requirements_dev.txt"),
 package=find_packages()
 
 )

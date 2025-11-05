@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\LEARN\PYTHON\DEEP LEARNING\DL Project\CNN Project\venv
+set VIRTUAL_ENV=D:\PYTHON\project\DL Projects\CNN\DeepLearningProject\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
