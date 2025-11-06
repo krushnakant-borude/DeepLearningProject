@@ -4,10 +4,20 @@ from dataclasses import dataclass
 from torch import device
 from Xray.constant.training_pipeline import *
 
+
 @dataclass
 class DataIngestionConfig:
-    artifacts_dir=os.path.join('artifacts',TIMESTAMP)
-    data_path=os.path.join(artifacts_dir,'data_ingestion',Data_folder)
+    def __init__(self):
+        self.s3_data_folder: str = S3_DATA_FOLDER
 
-    train_data_path=os.path.join(data_path,'train')
-    test_data_path=os.path.join(data_path,'test')
+        self.bucket_name: str = BUCKET_NAME
+
+        self.artifact_dir: str = os.path.join(ARTIFACT_DIR, TIMESTAMP)
+
+        self.data_path: str = os.path.join(
+            self.artifact_dir, "data_ingestion", self.s3_data_folder
+        )
+
+        self.train_data_path: str = os.path.join(self.data_path, "train")
+
+        self.test_data_path: str = os.path.join(self.data_path, "test")
